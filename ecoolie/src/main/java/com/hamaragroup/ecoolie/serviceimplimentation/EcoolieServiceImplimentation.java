@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 
 import com.hamaragroup.ecoolie.repository.AdminRepositry;
 import com.hamaragroup.ecoolie.repository.BookingRepository;
+import com.hamaragroup.ecoolie.repository.BookingStatusRepository;
 import com.hamaragroup.ecoolie.repository.CoolieRepository;
 import com.hamaragroup.ecoolie.repository.StationRepository;
-import com.hamaragroup.ecoolie.repository.StatusRepository;
 import com.hamaragroup.ecoolie.serviceinterface.EcoolieServiceInterface;
 
 @Service
@@ -17,23 +17,24 @@ public class EcoolieServiceImplimentation implements EcoolieServiceInterface {
 	AdminRepositry adminRepositry;
 	
 	@Autowired
-	BookingRepository bookingRepository;
+	StationRepository stationRepository;
+	
 	
 	@Autowired
 	CoolieRepository coolieRepository;
 	
 	@Autowired
-	StatusRepository statusRepository;
+	BookingStatusRepository bookingStatusRepository;
 	
 	@Autowired
-	StationRepository stationRepository;
+	BookingRepository bookingRepository;
 
 	@Override
 	public String helloWorld() {
 		// TODO Auto-generated method stub
-		return "Hello World.";
+		return "Hello world";
 	}
-	
+
 	
 	
 }

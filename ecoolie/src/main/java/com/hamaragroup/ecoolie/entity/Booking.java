@@ -21,7 +21,29 @@ public class Booking {
 	private String finalFare;
 	
 	@ManyToOne
-	private Status status;
+	private BookingStatus bookingStatus;
+	
+	@ManyToOne
+	private Station station;
+
+	public Booking(String bookingId, String userName, String userPhoneNumber, String userAddress, String trainNo,
+			String coachNo, String seatNo, String estimatedLaguageWeight, String finalLaguageWeight,
+			String estimatedFare, String finalFare, BookingStatus bookingStatus, Station station) {
+		super();
+		this.bookingId = bookingId;
+		this.userName = userName;
+		this.userPhoneNumber = userPhoneNumber;
+		this.userAddress = userAddress;
+		this.trainNo = trainNo;
+		this.coachNo = coachNo;
+		this.seatNo = seatNo;
+		this.estimatedLaguageWeight = estimatedLaguageWeight;
+		this.finalLaguageWeight = finalLaguageWeight;
+		this.estimatedFare = estimatedFare;
+		this.finalFare = finalFare;
+		this.bookingStatus = bookingStatus;
+		this.station = station;
+	}
 
 	public String getBookingId() {
 		return bookingId;
@@ -111,34 +133,20 @@ public class Booking {
 		this.finalFare = finalFare;
 	}
 
-	public Status getStatus() {
-		return status;
+	public BookingStatus getBookingStatus() {
+		return bookingStatus;
 	}
 
-	public void setStatus(Status status) {
-		this.status = status;
+	public void setBookingStatus(BookingStatus bookingStatus) {
+		this.bookingStatus = bookingStatus;
 	}
 
-	public Booking(String bookingId, String userName, String userPhoneNumber, String userAddress, String trainNo,
-			String coachNo, String seatNo, String estimatedLaguageWeight, String finalLaguageWeight,
-			String estimatedFare, String finalFare, Status status) {
-		super();
-		this.bookingId = bookingId;
-		this.userName = userName;
-		this.userPhoneNumber = userPhoneNumber;
-		this.userAddress = userAddress;
-		this.trainNo = trainNo;
-		this.coachNo = coachNo;
-		this.seatNo = seatNo;
-		this.estimatedLaguageWeight = estimatedLaguageWeight;
-		this.finalLaguageWeight = finalLaguageWeight;
-		this.estimatedFare = estimatedFare;
-		this.finalFare = finalFare;
-		this.status = status;
+	public Station getStation() {
+		return station;
 	}
 
-	public Booking() {
-		super();
+	public void setStation(Station station) {
+		this.station = station;
 	}
 
 	@Override
@@ -146,9 +154,16 @@ public class Booking {
 		return "Booking [bookingId=" + bookingId + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
 				+ ", userAddress=" + userAddress + ", trainNo=" + trainNo + ", coachNo=" + coachNo + ", seatNo="
 				+ seatNo + ", estimatedLaguageWeight=" + estimatedLaguageWeight + ", finalLaguageWeight="
-				+ finalLaguageWeight + ", estimatedFare=" + estimatedFare + ", finalFare=" + finalFare + ", status="
-				+ status + "]";
+				+ finalLaguageWeight + ", estimatedFare=" + estimatedFare + ", finalFare=" + finalFare
+				+ ", bookingStatus=" + bookingStatus + ", station=" + station + "]";
 	}
 
+	public Booking() {
+		super();
+	}
+	
+	
+
+	
 
 }

@@ -1,3 +1,4 @@
+
 package com.hamaragroup.ecoolie.entity;
 
 import javax.persistence.Entity;
